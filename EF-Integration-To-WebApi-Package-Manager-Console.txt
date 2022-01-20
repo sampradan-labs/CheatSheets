@@ -1,0 +1,18 @@
+Steps to EF integration in Web Api Core
+1. Create required model classes. Build your application.
+1.5. Add new controller choosing the option
+   API controller with EF actions
+2. In the dialog box for controller creation, Choose a model class.
+3. Click the Add button, to add a Datacontext class
+   The controller name gets auto-generated based on the model class name
+4. Click ok. The installation of EF Core packages will happen in the backend. 
+   i. In case of error related to missing packages, install them from Nuget. Keep the version number same or as close to the version of the EF libraries installed while generating the EF controller.
+5. Build the solution.
+6. Retry the step 1.5,2,3 until successful
+7. Open Package Manager Console (Tools->Nuget Package Manager -> Package Manager Console)
+8. Choose the correct project in the Package Manager Console. Set the startup project to the current project.
+8. Add the command for creating the EF-DB script.
+   >Add-Migration
+9. The Migrations folder will be generated with the EF-DB scripts.
+10. Add the following command in the package manager console for updating the database.
+    >Update-Database
